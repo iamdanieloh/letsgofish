@@ -8,6 +8,7 @@ var Homepage = React.createClass({
     return (
       <Layout>
         <h1>Welcome to LetsGoFish</h1>
+        <br />
       </Layout>
     );
   }
