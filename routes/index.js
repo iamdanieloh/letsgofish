@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res) {
 	geocoder.geocode(req.body.location, function(err, res) {
 		if(err) {
-			res.send(err)
+			res.render('/', {error: 'Unable to find location.'})
 			return;
 		} else {
 			console.log(res)
