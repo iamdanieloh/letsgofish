@@ -8,11 +8,14 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/matapeake', function(req, res) {
-	fetch('http://api.wunderground.com/api/30cc3e05d34dd457/conditions/forecast/tide/q/MD/Stevensville.json')
+	fetch('http://api.aerisapi.com/batch/43.567,-100.895?requests=/observations,/forecasts,/tides&client_id=iTdIAjhd3NDNxOaEiuWoO&client_secret=uvoj4tMptzPqHxQZ2AcrokrlLaOnby7ZQQWjuJ0V')
 	.then(function(res) {
 		return res.json();
 	}).then(function(json) {
-		res.render('matapeake', {location: json.current_observation.display_location.full, temp: json.current_observation.temp_f, weather: json.current_observation.weather})
+		var loc = json.response.responses[0].response.place;
+		var ob = json.response.responses[0].response.ob;
+		console.log(json.response.responses[0].response.place.name)
+		res.render('matapeake', {location: loc.name, temp: 'test2', weather: 'test3'})
 	})
 });
 
