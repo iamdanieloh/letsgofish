@@ -16,22 +16,22 @@ var Homepage = React.createClass({
       errorMessage = <ErrorMessage message={this.props.error} />;
     }
 
+    
+
     return (
       <Layout>
-        <h1>Welcome to LetsGoFish</h1>
-        <br />
           <div className="container">
+          <h1>Welcome to LetsGoFish</h1>
           <div className="panel panel-default">
             <div className="panel-heading">
-              <h3 className="panel-title">Lets Search for a Fishing Spot!</h3>
+              <h3 className="panel-title">Where are we fishing today?</h3>
             </div>
             <div className="panel-body">
-              <form method="post" action="/">
-                {errorMessage}
+            {errorMessage}
+              <form method="post" action="/location">
                 <div className="form-group">
-                  <input type="text" className="form-control" id="location" placeholder="Fish Where?" name="location" defaultValue={this.props.emailAddress} />
+                <input class="btn btn-default" type="submit" value="Ocean City Fishing Pier" id="name" name="name"></input>
                 </div>
-                <button type="submit" className="btn btn-success">Search</button>
               </form>
             </div>
           </div>

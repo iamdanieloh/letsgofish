@@ -1,0 +1,598 @@
+{
+  "collection": [
+    {
+      "name": "Ocean City Fishing Pier",
+      "location": "Outer Coast",
+      "latitude": "38.313",
+      "longitude": "-75.108"
+    },
+    {
+      "name": "Ocean City Inlet",
+      "location": "Outer Coast",
+      "latitude": "38.331",
+      "longitude": "-75.085"
+    },
+    {
+      "name": "Ocean City",
+      "location": "Outer Coast",
+      "latitude": "38.325",
+      "longitude": "-75.085"
+    },
+    {
+      "name": "Keydash (Isle Of Wight Bay)",
+      "location": "Outer Coast",
+      "latitude": "38.32",
+      "longitude": "-75.086"
+    },
+    {
+      "name": "Public Landing",
+      "location": "Chincoteague Bay",        
+      "latitude": "38.148",
+      "longitude": "-75.28"
+    },
+    {
+      "name": "South Point (Sinepuxent Neck)",
+      "location": "Chincoteague Bay",
+      "latitude": "38° 12' 54\"",
+      "longitude": "75° 11' 30\""
+    },
+    {
+      "name": "Ape Hole Creek (Pocomoke Sound)",
+      "location": "Chesapeake Bay",      
+      "latitude": "37° 57' 42\"",
+      "longitude": "75° 49' 18\""
+    },
+    {
+      "name": "Shelltown",
+      "location": "Pocomoke River",   
+      "latitude": "37° 58' 48\"",
+      "longitude": "75° 38' 18\""
+    },
+    {
+      "name": "Snow Hill",
+      "location": "Pocomoke River",         
+      "latitude": "38° 10' 42\"",
+      "longitude": "75° 23' 48\""
+    },
+    {
+      "name": "Crisfield (Little Annemessex River)",
+      "location": "Chesapeake Bay",         
+      "latitude": "37° 58' 36\"",
+      "longitude": "75° 51' 48\""
+    },
+    {
+      "name": "Colburn Creek (Big Annemessex River)",
+      "location": "Chesapeake Bay",
+      "latitude": "38° 02' 54\"",
+      "longitude": "75° 48' 12\""
+    },
+    {
+      "name": "Long Point (Big Annemessex River)",
+      "location": "Chesapeake Bay",
+      "latitude": "38° 03' 24\"",
+      "longitude": "75° 48' 12\""
+    },
+    {
+      "name": "Teague Creek (Manokin River)",
+      "location": "Chesapeake Bay",
+      "latitude": "38° 06' 30\"",
+      "longitude": "75° 50' 18\""
+    },
+    {
+      "name": "Ewell (Smith Island)",
+      "location": "Chesapeake Bay",
+      "latitude": "37° 59' 42\"",
+      "longitude": "76° 01' 54\""
+    },
+    {
+      "name": "Holland Island Bar Light",
+      "location": "Chesapeake Bay",
+      "latitude": "38° 04' 06\"",
+      "longitude": "76° 05' 48\""
+    },
+    {
+      "name": "Chance",
+      "location": "Chesapeake Bay",
+      "latitude": "38° 10' 18\"",
+      "longitude": "75° 56' 42\""
+    },
+    {
+      "name": "Sharkfin Shoal Light",
+      "location": "Chesapeake Bay",
+      "latitude": "38° 12' 06\"",
+      "longitude": "75° 59' 12\""
+    },
+    {
+      "name": "Great Shoals Light (Monie Bay)",
+      "location": "Chesapeake Bay",
+      "latitude": "38° 13' 00\"",
+      "longitude": "75° 52' 60\""
+    },
+    {
+      "name": "Whitehaven",
+      "location": "Wicomico River",
+      "latitude": "38° 16' 06\"",
+      "longitude": "75° 47' 18\""
+    },
+    {
+      "name": "Salisbury",
+      "location": "Wicomico River",
+      "latitude": "38° 21' 54\"",
+      "longitude": "75° 36' 24\""
+    },
+    {
+      "name": "Roaring Point",
+      "location": "Nanticoke River",
+      "latitude": "38° 15' 42\"",
+      "longitude": "75° 55' 12\""
+    },
+    {
+      "name": "Vienna",
+      "location": "Nanticoke River",
+      "latitude": "38° 28' 60\"",
+      "longitude": "75° 49' 06\""
+    },
+    {
+      "name": "Sharptown",
+      "location": "Nanticoke River",
+      "latitude": "38° 32' 42\"",
+      "longitude": "75° 43' 24\""
+    },
+    {
+      "name": "Mccready´s Creek",
+      "location": "Chesapeake Bay",
+      "latitude": "38° 17' 60\"",
+      "longitude": "76° 00' 18\""
+    },
+    {
+      "name": "Hooper Strait Light",
+      "location": "Chesapeake Bay",
+      "latitude": "38° 13' 36\"",
+      "longitude": "76° 04' 36\""
+    },
+    {
+      "name": "Bishops Head",
+      "location": "Chesapeake Bay",
+      "latitude": "38° 13' 12\"",
+      "longitude": "76° 02' 18\""
+    },
+    {
+      "name": "Middle Hooper Island",
+      "location": "Chesapeake Bay",
+      "latitude": "38° 17' 48\"",
+      "longitude": "76° 12' 18\""
+    },
+    {
+      "name": "Barren Island",
+      "location": "Chesapeake Bay",
+      "latitude": "38° 20' 30\"",
+      "longitude": "76° 15' 54\""
+    },
+    {
+      "name": "Beaverdam Creek",
+      "location": "Little Choptank River",
+      "latitude": "38° 25' 42\"",
+      "longitude": "76° 14' 12\""
+    },
+    {
+      "name": "Taylors Island (Slaughter Creek)",
+      "location": "Little Choptank River",
+      "latitude": "38° 28' 00\"",
+      "longitude": "76° 17' 42\""
+    },
+    {
+      "name": "Woolford (Church Creek)",
+      "location": "Little Choptank River",
+      "latitude": "38° 30' 24\"",
+      "longitude": "76° 10' 24\""
+    },
+    {
+      "name": "Cherry Island (Beckwiths Creek)",
+        "location": "Little Choptank River",
+      "latitude": "38° 33' 42\"",
+      "longitude": "76° 12' 30\""
+    },
+    {
+      "name": "Cambridge",
+      "location": "Choptank River",
+      "latitude": "38° 34' 24\"",
+      "longitude": "76° 04' 06\""
+    },
+    {
+      "name": "Dover Bridge",
+      "location": "Choptank River",
+      "latitude": "38° 45' 24\"",
+      "longitude": "75° 59' 54\""
+    },
+    {
+      "name": "Hillsboro",
+      "location": "Choptank River",
+      "latitude": "38° 55' 00\"",
+      "longitude": "75° 56' 42\""
+    },
+    {
+      "name": "Oxford",
+      "location": "Tred Avon River",
+      "latitude": "38° 41' 36\"",
+      "longitude": "76° 10' 24\""
+    },
+    {
+      "name": "Easton Point",
+      "location": "Tred Avon River",
+      "latitude": "38° 46' 06\"",
+      "longitude": "76° 05' 42\""
+    },
+    {
+      "name": "Deep Neck Point (Broad Creek)",
+      "location": "Chesapeake Bay",
+      "latitude": "38° 43' 54\"",
+      "longitude": "76° 14' 06\""
+    },
+    {
+      "name": "St. Michaels (San Domingo Creek)",
+      "location": "Chesapeake Bay",
+      "latitude": "38° 46' 30\"",
+      "longitude": "76° 13' 60\""
+    },
+    {
+      "name": "Avalon (Dogwood Harbor)",
+      "location": "Chesapeake Bay",
+      "latitude": "38° 42' 36\"",
+      "longitude": "76° 20' 06\""
+    },
+    {
+      "name": "Tilghman Island (Ferry Cove, Eastern Bay)",
+      "location": "Chesapeake Bay",
+      "latitude": "38° 45' 54\"",
+      "longitude": "76° 19' 42\""
+    },
+    {
+      "name": "Claiborne (Eastern Bay)",
+      "location": "Chesapeake Bay",
+      "latitude": "38° 50' 12\"",
+      "longitude": "76° 16' 48\""
+    },
+    {
+      "name": "St. Michaels (Miles River)",
+      "location": "Chesapeake Bay",
+      "latitude": "38° 47' 12\"",
+      "longitude": "76° 13' 18\""
+    },
+    {
+      "name": "Kent Island Narrows",
+      "location": "Chesapeake Bay",
+      "latitude": "38° 58' 00\"",
+      "longitude": "76° 14' 36\""
+    },
+    {
+      "name": "Love Point Pier",
+      "location": "Chester River",
+      "latitude": "39° 01' 54\"",
+      "longitude": "76° 18' 06\""
+    },
+    {
+      "name": "Queenstown",
+      "location": "Chester River",
+      "latitude": "38° 59' 48\"",
+      "longitude": "76° 09' 30\""
+    },
+    {
+      "name": "Centreville Landing (Corsica River)",
+      "location": "Chester River",
+      "latitude": "39° 03' 12\"",
+      "longitude": "76° 04' 30\""
+    },
+    {
+      "name": "Cliffs Point",
+      "location": "Chester River",
+      "latitude": "39° 06' 24\"",
+      "longitude": "76° 08' 30\""
+    },
+    {
+      "name": "Cliffs Wharf",
+      "location": "Chester River",
+      "latitude": "39° 06' 36\"",
+      "longitude": "76° 08' 18\""
+    },
+    {
+      "name": "Chestertown",
+      "location": "Chester River",
+      "latitude": "39° 12' 24\"",
+      "longitude": "76° 03' 48\""
+    },
+    {
+      "name": "Crumpton",
+      "location": "Chester River",
+      "latitude": "39° 14' 42\"",
+      "longitude": "75° 55' 30\""
+    },
+    {
+      "name": "Matapeake",
+      "location": "Chesapeake Bay",
+      "latitude": "38° 57' 24\"",
+      "longitude": "76° 21' 18\""
+    },
+    {
+      "name": "Kent Point",
+      "location": "Chesapeake Bay",
+      "latitude": "38° 50' 12\"",
+      "longitude": "76° 22' 24\""
+    },
+    {
+      "name": "Deep Landing (Swan Creek)",
+      "location": "Chesapeake Bay",
+      "latitude": "39° 08' 42\"",
+      "longitude": "76° 15' 36\""
+    },
+    {
+      "name": "Tolchester Beach",
+      "location": "Chesapeake Bay",
+      "latitude": "39° 12' 48\"",
+      "longitude": "76° 14' 42\""
+    },
+    {
+      "name": "Worton Creek Entrance",
+      "location": "Chesapeake Bay",
+      "latitude": "39° 17' 48\"",
+      "longitude": "76° 10' 18\""
+    },
+    {
+      "name": "Betterton",
+      "location": "Chesapeake Bay",
+      "latitude": "39° 22' 18\"",
+      "longitude": "76° 03' 48\""
+    },
+    {
+      "name": "Town Point Wharf",
+      "location": "Elk River",
+      "latitude": "39° 30' 12\"",
+      "longitude": "75° 55' 00\""
+    },
+    {
+      "name": "Chesapeake City",
+      "location": "Elk River",
+      "latitude": "39° 31' 39\"",
+      "longitude": "75° 48' 34\""
+    },
+    {
+      "name": "Old Frenchtown Wharf",
+      "location": "Elk River",
+      "latitude": "39° 34' 30\"",
+      "longitude": "75° 50' 36\""
+    },
+    {
+      "name": "Charlestown (Northeast River)",
+      "location": "Chesapeake Bay",
+      "latitude": "39° 34' 24\"",
+      "longitude": "75° 58' 12\""
+    },
+    {
+      "name": "Havre De Grace",
+      "location": "Susquehanna River",
+      "latitude": "39° 32' 12\"",
+      "longitude": "76° 05' 24\""
+    },
+    {
+      "name": "Port Deposit",
+      "location": "Susquehanna River", 
+      "latitude": "39° 36' 12\"",
+      "longitude": "76° 06' 48\""
+    },
+    {
+      "name": "Pond Point (Bush River)",
+      "location": "Chesapeake Bay",
+      "latitude": "39° 23' 18\"",
+      "longitude": "76° 15' 18\""
+    },
+    {
+      "name": "North Point",
+      "location": "Patapsco River",
+      "latitude": "39° 11' 48\"",
+      "longitude": "76° 26' 42\""
+    },
+    {
+      "name": "Stony Creek",
+      "location": "Patapsco River",
+      "latitude": "39° 09' 48\"",
+      "longitude": "76° 31' 36\""
+    },
+    {
+      "name": "Hawkins Point",
+      "location": "Patapsco River",
+      "latitude": "39° 12' 30\"",
+      "longitude": "76° 31' 60\""
+    },
+    {
+      "name": "Baltimore",
+      "location": "Patapsco River",
+      "latitude": "39° 16' 00\"",
+      "longitude": "76° 34' 42\""
+    },
+    {
+      "name": "Fort Mchenry Marsh",
+      "location": "Patapsco River",
+      "latitude": "39° 15' 42\"",
+      "longitude": "76° 35' 06\""
+    },
+    {
+      "name": "Mountain Point (Magothy River)",
+      "location": "Chesapeake Bay",
+      "latitude": "39° 03' 42\"",
+      "longitude": "76° 25' 60\""
+    },
+    {
+      "name": "Cornfield Creek (Magothy River)",
+      "location": "Chesapeake Bay",
+      "latitude": "39° 06' 00\"",
+      "longitude": "76° 26' 42\""
+    },
+    {
+      "name": "Brewer Point",
+      "location": "Severn River",
+      "latitude": "39° 01' 36\"",
+      "longitude": "76° 31' 60\""
+    },
+    {
+      "name": "Annapolis",
+      "location": "Severn River",
+      "latitude": "38° 58' 60\"",
+      "longitude": "76° 28' 54\""
+    },
+    {
+      "name": "Thomas Point Shoal Light",
+      "location": "Chesapeake Bay",
+      "latitude": "38° 53' 60\"",
+      "longitude": "76° 25' 60\""
+    },
+    {
+      "name": "Edgewater (South River)",
+      "location": "Chesapeake Bay",
+      "latitude": "38° 57' 00\"",
+      "longitude": "76° 32' 60\""
+    },
+    {
+      "name": "Gingerville Creek (South River)",
+      "location": "Chesapeake Bay",
+      "latitude": "38° 57' 30\"",
+      "longitude": "76° 33' 18\""
+    },
+    {
+      "name": "Rhode River (county Wharf)",
+      "location": "Chesapeake Bay",
+      "latitude": "38° 53' 12\"",
+      "longitude": "76° 32' 24\""
+    },
+    {
+      "name": "Galesville (West River)",
+      "location": "Chesapeake Bay",
+      "latitude": "38° 50' 30\"",
+      "longitude": "76° 32' 24\""
+    },
+    {
+      "name": "Rose Haven",
+      "location": "Chesapeake Bay",
+      "latitude": "38° 43' 30\"",
+      "longitude": "76° 32' 30\""
+    },
+    {
+      "name": "Chesapeake Beach",
+      "location": "Chesapeake Bay",
+      "latitude": "38° 42' 00\"",
+      "longitude": "76° 31' 60\""
+    },
+    {
+      "name": "Long Beach",
+      "location": "Chesapeake Bay",
+      "latitude": "38° 27' 54\"",
+      "longitude": "76° 28' 24\""
+    },
+    {
+      "name": "Cove Point",
+      "location": "Chesapeake Bay",
+      "latitude": "38° 23' 30\"",
+      "longitude": "76° 23' 54\""
+    },
+    {
+      "name": "Solomons Island",
+      "location": "Patuxent River",
+      "latitude": "38° 19' 00\"",
+      "longitude": "76° 27' 06\""
+    },
+    {
+      "name": "Broomes Island",
+      "location": "Patuxent River",
+      "latitude": "38° 24' 54\"",
+      "longitude": "76° 32' 42\""
+    },
+    {
+      "name": "Benedict",
+      "location": "Patuxent River",
+      "latitude": "38° 30' 48\"",
+      "longitude": "76° 40' 12\""
+    },
+    {
+      "name": "Lower Marlboro",
+      "location": "Patuxent River",
+      "latitude": "38° 39' 18\"",
+      "longitude": "76° 40' 60\""
+    },
+    {
+      "name": "Point Lookout",
+      "location": "Chesapeake Bay",
+      "latitude": "38° 02' 24\"",
+      "longitude": "76° 19' 24\""
+    },
+    {
+      "name": "Cornfield Harbor",
+      "location": "Potomac River", 
+      "latitude": "38° 03' 36\"",
+      "longitude": "76° 21' 42\""
+    },
+    {
+      "name": "Piney Point",
+      "location": "Potomac River",
+      "latitude": "38° 07' 60\"",
+      "longitude": "76° 31' 60\""
+    },
+    {
+      "name": "Coltons Point",
+      "location": "Potomac River",
+      "latitude": "38° 13' 24\"",
+      "longitude": "76° 44' 54\""
+    },
+    {
+      "name": "Mill Point",
+      "location": "Potomac River",
+      "latitude": "38° 19' 36\"",
+      "longitude": "76° 49' 60\""
+    },
+    {
+      "name": "Morgantown",
+      "location": "Potomac River",
+      "latitude": "38° 20' 30\"",
+      "longitude": "76° 58' 36\""
+    },
+    {
+      "name": "Goose Creek",
+      "location": "Potomac River",
+      "latitude": "38° 27' 08\"",
+      "longitude": "77° 03' 11\""
+    },
+    {
+      "name": "Riverside",
+      "location": "Potomac River",
+      "latitude": "38° 23' 10\"",
+      "longitude": "77° 08' 42\""
+    },
+    {
+      "name": "Clifton Beach (Smith Point)",
+      "location": "Potomac River",
+      "latitude": "38° 24' 48\"",
+      "longitude": "77° 16' 00\""
+    },
+    {
+      "name": "Nanjemoy (Liverpool Point)",
+      "location": "Potomac River",
+      "latitude": "38° 27' 36\"",
+      "longitude": "77° 16' 12\""
+    },
+    {
+      "name": "Indian Head",
+      "location": "Potomac River",
+      "latitude": "38° 36' 06\"",
+      "longitude": "77° 11' 06\""
+    },
+    {
+      "name": "Marshall Hall",
+      "location": "Potomac River",
+      "latitude": "38° 41' 12\"",
+      "longitude": "77° 06' 06\""
+    },
+    {
+      "name": "Bladensburg",
+      "location": "Anacostia River",
+      "latitude": "38° 55' 60\"",
+      "longitude": "76° 56' 20\""
+    }
+  ]
+}
