@@ -30,6 +30,7 @@ router.post('/location', function(req, res) {
 	console.log(latitude)
 	var longitude = jq('collection[name='+req.body.name+'].longitude', {data: data}).value
 	console.log(longitude)
+	var water = jq('collection[name='+req.body.name+'].location', {data:data}).value
 	console.log('http://api.aerisapi.com/batch/'+latitude+','+longitude+'?requests=/observations,/forecasts,/tides?filter=highlow&client_id=iTdIAjhd3NDNxOaEiuWoO&client_secret=uvoj4tMptzPqHxQZ2AcrokrlLaOnby7ZQQWjuJ0V')
 
 	fetch('http://api.aerisapi.com/batch/'+latitude+','+longitude+'?requests=/observations,/forecasts,/tides?filter=highlow&client_id=iTdIAjhd3NDNxOaEiuWoO&client_secret=uvoj4tMptzPqHxQZ2AcrokrlLaOnby7ZQQWjuJ0V')
@@ -38,15 +39,16 @@ router.post('/location', function(req, res) {
 	}).then(function(json) {
 		var loc = json.response.responses[0].response.place.name;
 		var ob = json.response.responses[0].response.ob;
-		var low_o = moment(json.response.responses[2].response[0].periods[0].dateTimeISO).format('LLLL');
-		var low_t = moment(json.response.responses[2].response[0].periods[2].dateTimeISO).format('LLLL');
-		var high_o = moment(json.response.responses[2].response[0].periods[1].dateTimeISO).format('LLLL');
+		var low_o = moment(json.response.responses[2].response[0].periods[0].dateTimeISO).format('llll');
+		var low_t = moment(json.response.responses[2].response[0].periods[2].dateTimeISO).format('llll');
+		var high_o = moment(json.response.responses[2].response[0].periods[1].dateTimeISO).format('llll');
 		var title = req.body.name;
 		var loca = loc.toUpperCase();
+		var icon = 'http://www.shermanctweather.org/meteo1/icons/aeris/'+ob.icon;
 
 		if (json.response.responses[2].response[0].periods[3]) {
 
-			var high_t = moment(json.response.responses[2].response[0].periods[3].dateTimeISO).format('LLLL');
+			var high_t = moment(json.response.responses[2].response[0].periods[3].dateTimeISO).format('llll');
 			console.log(high_t);
 
 		} else { 
@@ -58,8 +60,8 @@ router.post('/location', function(req, res) {
 
 		//var date = new Date(json.response.responses[2].response[0].periods[0].dateTimeISO).toString()
 
-		console.log(low_o, low_t, high_o, high_t, loc)
-		res.render('location', {title: title, location: loca, temp: ob.tempF, weather: ob.weather})
+		console.log(low_o, low_t, high_o, high_t, loc, icon)
+		res.render('location', {low_one: low_o, low_two: low_t, high_one: high_o, high_two: high_t, title: title, water: water, location: loca, temp: ob.tempF, weather: ob.weather, icon: icon})
 	})
 
 
