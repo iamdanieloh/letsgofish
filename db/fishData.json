@@ -309,14 +309,32 @@
     {
       "name": "Matapeake",
       "location": "Chesapeake Bay",
-      "latitude": "38° 57' 24\"",
-      "longitude": "76° 21' 18\""
+      "latitude": "38.953",
+      "longitude": "-76.352"
+    },
+    {
+      "name": "Romancoke",
+      "location": "Chesapeake Bay",
+      "latitude": "38.8701691",
+      "longitude": "-76.3398478"
+    },
+    {
+      "name": "Sandy Point",
+      "location": "Chesapeake Bay",
+      "latitude": "39.1618378",
+      "longitude": "-76.4820051"
+    },
+    {
+      "name": "Fort Smallwood Park",
+      "location": "Chesapeake Bay",
+      "latitude": "39.009",
+      "longitude": "-76.4"
     },
     {
       "name": "Kent Point",
       "location": "Chesapeake Bay",
-      "latitude": "38° 50' 12\"",
-      "longitude": "76° 22' 24\""
+      "latitude": "38.838",
+      "longitude": "-76.368"
     },
     {
       "name": "Deep Landing (Swan Creek)",
