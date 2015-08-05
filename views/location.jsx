@@ -14,6 +14,8 @@ var Location = React.createClass({
         <br />
         <img src={this.props.icon} />
         <br />
+        <b>{this.props.time}</b>
+        <br />
         Current weather in {this.props.location} is {this.props.temp} <i>fahrenheit</i> and {this.props.weather}.
         <br />
         Low Tide@  {this.props.low_one}
