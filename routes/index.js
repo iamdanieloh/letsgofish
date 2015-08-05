@@ -39,16 +39,16 @@ router.post('/location', function(req, res) {
 	}).then(function(json) {
 		var loc = json.response.responses[0].response.place.name;
 		var ob = json.response.responses[0].response.ob;
-		var low_o = moment(json.response.responses[2].response[0].periods[0].dateTimeISO).format('llll');
-		var low_t = moment(json.response.responses[2].response[0].periods[2].dateTimeISO).format('llll');
-		var high_o = moment(json.response.responses[2].response[0].periods[1].dateTimeISO).format('llll');
+		var low_o = moment(json.response.responses[2].response[0].periods[0].dateTimeISO).format('h:mm a');
+		var low_t = moment(json.response.responses[2].response[0].periods[2].dateTimeISO).format('h:mm a');
+		var high_o = moment(json.response.responses[2].response[0].periods[1].dateTimeISO).format('h:mm a');
 		var title = req.body.name;
 		var loca = loc.toUpperCase();
 		var icon = 'http://www.shermanctweather.org/meteo1/icons/aeris/'+ob.icon;
 
 		if (json.response.responses[2].response[0].periods[3]) {
 
-			var high_t = moment(json.response.responses[2].response[0].periods[3].dateTimeISO).format('llll');
+			var high_t = moment(json.response.responses[2].response[0].periods[3].dateTimeISO).format('h:mm a');
 			console.log(high_t);
 
 		} else { 
