@@ -20,25 +20,34 @@ var Homepage = React.createClass({
 
     return (
       <Layout>
-          <div className="container">
-          <h1>Welcome to LetsGoFish</h1>
-          <div className="panel panel-default">
-            <div className="panel-heading">
-              <h3 className="panel-title">Where are we fishing today?</h3>
-            </div>
-            <div className="panel-body">
-            {errorMessage}
-              <form method="post" action="/location">
-                <div className="form-group">
-                <input class="btn btn-default" type="submit" value="Ocean City Fishing Pier" id="name" name="name"></input>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
+      <div className="jumbotron">
+      <div className="container">
+      <h1>Lets Go Fish</h1>
+      <div className="panel panel-default">
+      <div className="panel-heading">
+      <h3 className="panel-title">Where are we fishing today?</h3>
+      </div>
+      <div className="panel-body">
+      {errorMessage}
+      <form method="post" action="/location">
+      <div className="form-group">
+      <input className="btn btn-primary" type="submit" value="Matapeake" id="name" name="name"></input>
+      <input className="btn btn-primary" type="submit" value="Romancoke" id="name" name="name"></input>
+      <input className="btn btn-primary" type="submit" value="Annapolis" id="name" name="name"></input>
+      <input className="btn btn-primary" type="submit" value="Fort Smallwood Park" id="name" name="name"></input>
+      <input className="btn btn-primary" type="submit" value="Point Lookout" id="name" name="name"></input>
+      <input className="btn btn-primary" type="submit" value="Sandy Point" id="name" name="name"></input>
+      <input className="btn btn-primary" type="submit" value="Choptank Pier" id="name" name="name"></input>
+
+      </div>
+      </form>
+      </div>
+      </div>
+      </div>
+      </div>
       </Layout>
-    );
-  }
+      );
+}
 })
 
 

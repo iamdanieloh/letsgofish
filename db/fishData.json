@@ -327,8 +327,8 @@
     {
       "name": "Fort Smallwood Park",
       "location": "Chesapeake Bay",
-      "latitude": "39.009",
-      "longitude": "-76.4"
+      "latitude": "39.1657627",
+      "longitude": "-76.4793863"
     },
     {
       "name": "Kent Point",
@@ -453,8 +453,8 @@
     {
       "name": "Annapolis",
       "location": "Severn River",
-      "latitude": "38° 58' 60\"",
-      "longitude": "76° 28' 54\""
+      "latitude": "38.98",
+      "longitude": "-76.474"
     },
     {
       "name": "Thomas Point Shoal Light",
@@ -537,8 +537,14 @@
     {
       "name": "Point Lookout",
       "location": "Chesapeake Bay",
-      "latitude": "38° 02' 24\"",
-      "longitude": "76° 19' 24\""
+      "latitude": "38.041",
+      "longitude": "-76.323"
+    },
+    {
+      "name": "Choptank Pier",
+      "location": "Choptank River",
+      "latitude": "38.582253",
+      "longitude": "-76.0496636"
     },
     {
       "name": "Cornfield Harbor",
