@@ -64,9 +64,9 @@ module.exports = {
     dbConnect(function(client, done) {
       bcrypt.genSalt(10, function(err, salt) {
         bcrypt.hash(user.password, salt, function(err, hash) {
-          client.query('INSERT INTO users (email_address, first_name, last_name, password_hash, profile_url, age, gender, current_location, see_m, see_w)'+
-                       ' VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING id',
-                       [user.emailAddress, user.firstName, user.lastName, hash, user.profileUrl, user.age, user.gender, user.location, user.seeMen, user.seeWomen], function(err, result) {
+          client.query('INSERT INTO users (user_name, email_address, password_hash)'+
+                       ' VALUES ($1, $2, $3) RETURNING id',
+                       [user.userName, user.emailAddress, hash], function(err, result) {
             done()
             if (err) {
               console.log(err)

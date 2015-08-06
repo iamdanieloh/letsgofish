@@ -23,6 +23,53 @@ router.get('/', function(req, res, next) {
 });
 
 
+router.get('/sign_up', function(req, res) {
+  res.render('sign_up')
+})
+
+router.post('/sign_up', function(req, res) {
+  console.log('Looking for email=', req.body.emailAddress)
+  users.findByEmailAddress(req.body.emailAddress, function(user) {
+    if(user) {
+      res.render('sign_up', { emailAddress: req.body.emailAddress, error: 'User already exists' })
+    } else {
+      users.createUser({ userName: req.body.userName, emailAddress: req.body.emailAddress, password: req.body.password }, function(user){
+        console.log("User created id=", user.id)
+        res.cookie('userId', user.id, { signed: true }).redirect('profile')
+      })
+    }
+  })
+})
+
+router.get('/log_in', function(req, res) {
+  res.render('session/log_in')
+})
+
+router.post('/log_in', function(req, res) {
+  users.authenticate(req.body.emailAddress, req.body.password, function(user) {
+    if(user) {
+      res.cookie('userId', user.id, { signed: true }).redirect('profile')
+    } else {
+      res.render('log_in', { emailAddress: req.body.emailAddress, error: 'Log In Failed' })
+    }
+  })
+})
+
+router.get('/profile', function(req, res) {
+  users.profile(req.signedCookies.userId, function(user) {
+    if(req.signedCookies.userId) {
+      res.render('profile', {userName: user.user_name})
+    } else {
+      res.render('log_in', {error: 'Please Log In'})
+    }
+  })
+})
+
+
+router.get('/log_out', function(req, res) {
+  res.clearCookie('userId').redirect('/')
+})
+
 
 router.post('/location', function(req, res) {
 	console.log(req.body.name)
