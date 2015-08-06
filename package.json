@@ -19,6 +19,7 @@
     "jade": "~1.9.2",
     "json-query": "^1.5.0",
     "json-validation": "^1.0.4",
+    "md5-file": "^2.0.3",
     "moment": "^2.10.6",
     "morgan": "~1.5.3",
     "multiparty": "^4.1.2",

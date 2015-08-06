@@ -1,15 +1,20 @@
+require('dotenv').load();
 var http = require('http');
 var util = require('util');
+var fs = require('fs');
+var md5File = require('md5-file');
 var multiparty = require('multiparty');
 var AWS = require('aws-sdk');
 var PORT = process.env.PORT || 27372;
 
+
 var bucket = process.env.S3_BUCKET;
-var s3Client = new AWS.S3({
+var s3 = new AWS.S3({
   accessKeyId: process.env.S3_KEY,
   secretAccessKey: process.env.S3_SECRET,
   // See: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Config.html#constructor-property
 });
+
 
 var server = http.createServer(function(req, res) {
   if (req.url === '/') {
@@ -22,28 +27,35 @@ var server = http.createServer(function(req, res) {
       '</form>'
     );
   } else if (req.url === '/upload') {
+
     var form = new multiparty.Form();
-    var destPath;
-    form.on('field', function(name, value) {
-      if (name === 'path') {
-        destPath = value;
+
+    form.parse(req, function(err, fields, files) {
+      if (err) {
+        res.writeHead(400, {'content-type': 'text/plain'});
+        res.end("invalid request: " + err.message);
+        return;
       }
-    });
-    form.on('part', function(part) {
-      s3Client.putObject({
+
+      fileName = md5File(files.upload[0].path)+files.upload[0].originalFilename
+
+      var params = {
         Bucket: bucket,
-        Key: destPath,
+        Key: fileName,
         ACL: 'public-read',
-        Body: part,
-        ContentLength: part.byteCount,
-      }, function(err, data) {
-        if (err) throw err;
-        console.log("done", data);
-        res.end("OK");
-        console.log("https://s3.amazonaws.com/" + bucket + '/' + destPath);
+        Body: fs.readFileSync(files.upload[0].path)
+      };
+      s3.putObject(params, function(err, data) {
+        if (err) console.log(err, err.stack); // an error occurred
+        else     console.log(data);           // successful response
       });
+
+      // save a row in the data base
+
+      res.writeHead(200, {'content-type': 'text/plain'});
+      res.end('received files:\n\n '+util.inspect(files.upload[0]));
     });
-    form.parse(req);
+
     
   } else {
     res.writeHead(404, {'content-type': 'text/plain'});
