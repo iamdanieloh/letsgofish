@@ -10,6 +10,7 @@ var routes = require('./routes/index');
 var app = express();
 
 // view engine setup
+app.set('secret_key', process.env.SECRET_KEY || 'way too many secrets')
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine())

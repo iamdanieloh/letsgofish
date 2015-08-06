@@ -31,12 +31,14 @@ router.get('/signup', function(req, res) {
 router.post('/signup', function(req, res) {
   console.log('Looking for email=', req.body.emailAddress)
   users.findByEmailAddress(req.body.emailAddress, function(user) {
-    if(user) {
+    if(user.email_address) {
       res.render('signup', { emailAddress: req.body.emailAddress, error: 'User already exists' })
+    } else if (user.user_name) {
+    	res.render('signup', { userName: req.body.userName, error: 'User already exists' })
     } else {
       users.createUser({ userName: req.body.userName, emailAddress: req.body.emailAddress, password: req.body.password }, function(user){
         console.log("User created id=", user.id)
-        res.cookie('userId', user.id, { signed: true }).redirect('profile')
+        res.cookie('userId', user.id, { signed: true }).redirect('/')
       })
     }
   })

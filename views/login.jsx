@@ -22,6 +22,8 @@ var Login = React.createClass({
 
 <div className="container">
 
+          <link rel="stylesheet" href="/stylesheets/signin.css" />
+
       <form className="form-signin" >
       {errorMessage}
         <h2 className="form-signin-heading">Please sign in</h2>
