@@ -73,6 +73,14 @@ router.get('/logout', function(req, res) {
   res.clearCookie('userId').redirect('/')
 })
 
+router.get('/user_post', function(req, res) {
+	if(req.signedCookies.userId) {
+		res.render('user_post')
+	} else {
+		res.render('login', {error: 'Please Log In'})
+	}
+})
+
 
 router.post('/location', function(req, res) {
 	console.log(req.body.name)
