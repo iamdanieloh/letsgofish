@@ -5,7 +5,7 @@ var moment = require('moment');
 var jq = require('json-query');
 var app = express();
 var data = require('../db/fishData.json');
-var users = require('../services/users')
+var users = require('../services/users');
 
 
 
@@ -24,15 +24,15 @@ router.get('/', function(req, res, next) {
 });
 
 
-router.get('/sign_up', function(req, res) {
-  res.render('sign_up')
+router.get('/signup', function(req, res) {
+  res.render('signup')
 })
 
-router.post('/sign_up', function(req, res) {
+router.post('/signup', function(req, res) {
   console.log('Looking for email=', req.body.emailAddress)
   users.findByEmailAddress(req.body.emailAddress, function(user) {
     if(user) {
-      res.render('sign_up', { emailAddress: req.body.emailAddress, error: 'User already exists' })
+      res.render('signup', { emailAddress: req.body.emailAddress, error: 'User already exists' })
     } else {
       users.createUser({ userName: req.body.userName, emailAddress: req.body.emailAddress, password: req.body.password }, function(user){
         console.log("User created id=", user.id)
@@ -42,16 +42,16 @@ router.post('/sign_up', function(req, res) {
   })
 })
 
-router.get('/log_in', function(req, res) {
-  res.render('session/log_in')
+router.get('/login', function(req, res) {
+  res.render('login')
 })
 
-router.post('/log_in', function(req, res) {
+router.post('/login', function(req, res) {
   users.authenticate(req.body.emailAddress, req.body.password, function(user) {
     if(user) {
       res.cookie('userId', user.id, { signed: true }).redirect('profile')
     } else {
-      res.render('log_in', { emailAddress: req.body.emailAddress, error: 'Log In Failed' })
+      res.render('login', { emailAddress: req.body.emailAddress, error: 'Log In Failed' })
     }
   })
 })
@@ -61,13 +61,13 @@ router.get('/profile', function(req, res) {
     if(req.signedCookies.userId) {
       res.render('profile', {userName: user.user_name})
     } else {
-      res.render('log_in', {error: 'Please Log In'})
+      res.render('login', {error: 'Please Log In'})
     }
   })
 })
 
 
-router.get('/log_out', function(req, res) {
+router.get('/logout', function(req, res) {
   res.clearCookie('userId').redirect('/')
 })
 
