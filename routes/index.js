@@ -5,6 +5,7 @@ var moment = require('moment');
 var jq = require('json-query');
 var app = express();
 var data = require('../db/fishData.json');
+var users = require('../services/users')
 
 
 
