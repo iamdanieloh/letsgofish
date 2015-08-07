@@ -12,23 +12,23 @@ var UserPost = React.createClass({
         <div className="container">
           <div className="panel panel-default">
             <div className="panel-heading">
-              <h3 className="panel-title">Sign Up</h3>
+              <h3 className="panel-title">Lets Brag</h3>
             </div>
             <div className="panel-body">
               <form method="post" action="/user_post" enctype="multipart/form-data">
+                
                 <div className="form-group">
-                  <label for="email">Email address</label>
-                  <input type="email" className="form-control" id="emailAddress" placeholder="Email" name="emailAddress" defaultValue={this.props.emailAddress} />
-                </div>
-                <div className="form-group">
-                  <label for="password">Password</label>
-                  <input type="password" className="form-control" id="password" placeholder="Password" name="password" />
+                  <label for="userPost">Post</label>
+                  <br />
+                    <textarea className="form-control" name="userPost" cols="50" rows="5">
+                        Brag here...
+                    </textarea>                
                 </div>
                 <div className="form-group">
                   <label for="photo">Upload Photo</label>
                   <input type="file" name="upload" />
                 </div>
-                <button type="submit" className="btn btn-success">Sign up</button>
+                <button type="submit" className="btn btn-success">Submit</button>
               </form>
             </div>
           </div>
