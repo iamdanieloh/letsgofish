@@ -2,7 +2,7 @@ var React = require('react');
 var Layout = require('./layout');
 
 
-var SignUp = React.createClass({
+var UserPost = React.createClass({
   render: function() {
 
     return (
@@ -15,7 +15,7 @@ var SignUp = React.createClass({
               <h3 className="panel-title">Sign Up</h3>
             </div>
             <div className="panel-body">
-              <form method="post" action="/signup">
+              <form method="post" action="/user_post" enctype="multipart/form-data">
                 <div className="form-group">
                   <label for="email">Email address</label>
                   <input type="email" className="form-control" id="emailAddress" placeholder="Email" name="emailAddress" defaultValue={this.props.emailAddress} />
@@ -24,7 +24,10 @@ var SignUp = React.createClass({
                   <label for="password">Password</label>
                   <input type="password" className="form-control" id="password" placeholder="Password" name="password" />
                 </div>
-
+                <div className="form-group">
+                  <label for="photo">Upload Photo</label>
+                  <input type="file" name="upload" />
+                </div>
                 <button type="submit" className="btn btn-success">Sign up</button>
               </form>
             </div>
@@ -35,4 +38,4 @@ var SignUp = React.createClass({
   }
 });
 
-module.exports = SignUp;
+module.exports = UserPost;
