@@ -18,7 +18,7 @@ module.exports = {
 
   findByEmailAddress: function(emailAddress, cb) {
     dbConnect(function(client, done) {
-      client.query('SELECT id, email_address as "emailAddress", password_hash FROM users WHERE email_address = $1', [emailAddress], function(err, result) {
+      client.query('SELECT * FROM users WHERE email_address = $1', [emailAddress], function(err, result) {
         done()
         if (err) {
           console.log(err)
@@ -57,6 +57,21 @@ module.exports = {
 
         cb(result.rows[0])
       })
+    })
+  },
+
+  createPost: function(post, cb) {
+    dbConnect(function(client, done) {
+        client.query('INSERT INTO post (user_id, tag, user_post, photo_url)' + 'VALUES ($1, $2, $3, $4)',
+                      [post.userId, post.tag, post.userPost, post.upload]), function(err, result) {
+          done()
+          if(err) {
+            console.log(err)
+            throw(err)
+          }
+
+          cb(result.rows[0])
+        }
     })
   },
 

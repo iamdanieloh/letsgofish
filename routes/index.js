@@ -9,16 +9,20 @@ var data = require('../db/fishData.json');
 var users = require('../services/users');
 var fs = require('fs');
 var md5File = require('md5-file');
-var multiparty = require('multiparty');
 var AWS = require('aws-sdk');
 
 
 
-/*var geo = require('../services/geofinder')
+var bucket = process.env.S3_BUCKET;
+var s3 = new AWS.S3({
+  accessKeyId: process.env.S3_KEY,
+  secretAccessKey: process.env.S3_SECRET,
+  // See: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Config.html#constructor-property
+});
 
+/*var geo = require('../services/geofinder')
 var geocoderProvider = 'openstreetmap';
 var httpAdapter = 'http';
-
 var geocoder = require('node-geocoder')(geocoderProvider, httpAdapter);*/
 
 
@@ -87,37 +91,34 @@ router.get('/user_post', function(req, res) {
 })
 
 router.post('/user_post', function(req, res) {
+	console.log(req.body);
+	console.log(req.files);
+	console.log(req.files.upload.path)
 
-	var form = new multiparty.Form();
-
-    form.parse(req, function(err, fields, files) {
-      if (err) {
-        res.writeHead(400, {'content-type': 'text/plain'});
-        res.end("invalid request: " + err.message);
-        return;
-      }
-
-      fileName = md5File(files.upload[0].path)+files.upload[0].originalFilename
-
+	fileName = md5File(req.files.upload.path)+req.files.upload.originalname;
+	console.log(fileName)
       var params = {
         Bucket: bucket,
         Key: fileName,
         ACL: 'public-read',
-        Body: fs.readFileSync(files.upload[0].path)
+        Body: fs.readFileSync(req.files.upload.path),
       };
       s3.putObject(params, function(err, data) {
         if (err) console.log(err, err.stack); // an error occurred
         else     console.log(data);           // successful response
       });
 
-      // save a row in the data base
+    var photoLink = 'https://s3.amazonaws.com/'+bucket+'/'+fileName;
 
-      res.writeHead(200, {'content-type': 'text/plain'});
-      res.end('received files:\n\n '+util.inspect(files.upload[0]));
-    });
-
+    users.createPost({userId: req.signedCookies.userId, tag: req.body.tag, userPost: req.body.userPost, upload: photoLink}, function(res) {
+    	console.log('post created')
+    	res.redirect('/user_post')
+    	
+    })
 
 })
+
+
 
 
 

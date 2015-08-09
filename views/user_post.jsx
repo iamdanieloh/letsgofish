@@ -12,20 +12,31 @@ var UserPost = React.createClass({
         <div className="container">
           <div className="panel panel-default">
             <div className="panel-heading">
-              <h3 className="panel-title">Lets Brag</h3>
+              <h2 className="panel-title">Lets Brag!</h2>
             </div>
             <div className="panel-body">
-              <form method="post" action="/user_post" enctype="multipart/form-data">
-                
+              <form action="/user_post" encType="multipart/form-data" method="post">
+
                 <div className="form-group">
-                  <label for="userPost">Post</label>
+                  <input list="tag" name="tag" />
+                  <datalist id="tag">
+                      <option value="Matapeake" ></option>
+                      <option value="Romancoke" ></option>
+                      <option value="Annapolis" ></option>
+                      <option value="Fort Smallwood Park" ></option>
+                      <option value="Point Lookout" ></option>
+                      <option value="Sandy Point" ></option>
+                      <option value="Choptank Pier" ></option>
+                  </datalist>
+
                   <br />
-                    <textarea className="form-control" name="userPost" cols="50" rows="5">
-                        Brag here...
+                  <label for="userPost">Start braggin here!</label>
+                    <textarea className="form-control" name="userPost" id="userPost" cols="50" rows="5">
+                      
                     </textarea>                
                 </div>
                 <div className="form-group">
-                  <label for="photo">Upload Photo</label>
+                  <label for="upload">Upload Photo</label>
                   <input type="file" name="upload" />
                 </div>
                 <button type="submit" className="btn btn-success">Submit</button>
@@ -33,6 +44,7 @@ var UserPost = React.createClass({
             </div>
           </div>
         </div>
+
       </Layout>
     );
   }
