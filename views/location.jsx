@@ -2,11 +2,17 @@ var React = require('react');
 var Layout = require('./layout');
 
 
-
+var UserPosts = React.createClass({
+  render: function() {
+    return <div>{this.props.post}</div>;
+  }
+});
 
 
 var Location = React.createClass({
   render: function() {
+
+
     return (
       <Layout>
         <h1>{this.props.title}</h1>
@@ -25,6 +31,10 @@ var Location = React.createClass({
         Low Tide@  {this.props.low_two}
         <br />
         High Tide@  {this.props.high_two}
+        <div className="page-header">
+        <h1><small>Posts for {this.props.body}</small></h1>
+        </div>
+        <p>{this.props.post}</p>
       </Layout>
     );
   }

@@ -2,8 +2,20 @@ var React = require('react');
 var Layout = require('./layout');
 
 
+var SuccessMessage = React.createClass({
+  render: function() {
+    return <div className="alert alert-success" role="alert">{this.props.message}</div>;
+  }
+});
+
+
 var UserPost = React.createClass({
   render: function() {
+    var successMessage;
+
+    if(this.props.message) {
+      successMessage = <SuccessMessage message={this.props.message} />;
+    }
 
     return (
       <Layout>
@@ -15,6 +27,7 @@ var UserPost = React.createClass({
               <h2>Lets Brag!</h2>
             </div>
             <div className="panel-body">
+            {successMessage}
               <form action="/user_post" encType="multipart/form-data" method="post">
 
                 <div className="form-group">
