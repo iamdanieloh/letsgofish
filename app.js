@@ -10,6 +10,7 @@ var multer  = require('multer');
 
 
 
+
 require('dotenv').load();
 
 var routes = require('./routes/index');
@@ -32,7 +33,7 @@ app.use(bodyParser.raw());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(multer({ dest: './uploads/',
+app.use(multer({ dest: 'tmp/',
     rename: function (fieldname, filename) {
         return filename+"_"+Date.now();
     },

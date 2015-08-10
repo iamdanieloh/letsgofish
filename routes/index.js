@@ -95,7 +95,7 @@ router.post('/user_post', function(req, res) {
 	console.log(req.files);
 	console.log(req.files.upload.path)
 
-	fileName = md5File(req.files.upload.path)+req.files.upload.originalname;
+	fileName = md5File(req.files.upload.path)+Date.now()+req.files.upload.originalname;
 	console.log(fileName)
       var params = {
         Bucket: bucket,
@@ -112,9 +112,10 @@ router.post('/user_post', function(req, res) {
 
     users.createPost({userId: req.signedCookies.userId, tag: req.body.tag, userPost: req.body.userPost, upload: photoLink}, function(res) {
     	console.log('post created')
-    	res.redirect('/user_post')
     	
     })
+
+    res.redirect('/')
 
 })
 
@@ -157,6 +158,7 @@ router.post('/location', function(req, res) {
 
 		}
 
+		//Select * from post where tag = $1, [req.body.name]
 
 		//var date = new Date(json.response.responses[2].response[0].periods[0].dateTimeISO).toString()
 

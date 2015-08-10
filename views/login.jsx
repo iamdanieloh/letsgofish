@@ -20,7 +20,7 @@ var Login = React.createClass({
     return (
       <Layout>
 
-<div className="container">
+        <div className="container">
 
           <link rel="stylesheet" href="/stylesheets/signin.css" />
 
@@ -39,7 +39,7 @@ var Login = React.createClass({
         <button className="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       </form>
 
-</div>
+        </div>
 
       </Layout>
     );

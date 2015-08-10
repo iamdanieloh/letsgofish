@@ -12,14 +12,16 @@ var UserPost = React.createClass({
         <div className="container">
           <div className="panel panel-default">
             <div className="panel-heading">
-              <h2 className="panel-title">Lets Brag!</h2>
+              <h2>Lets Brag!</h2>
             </div>
             <div className="panel-body">
               <form action="/user_post" encType="multipart/form-data" method="post">
 
                 <div className="form-group">
+                  <label htmlFor="tag">Select Location:</label>
+                  <br />
                   <input list="tag" name="tag" />
-                  <datalist id="tag">
+                  <datalist id="tag" require>
                       <option value="Matapeake" ></option>
                       <option value="Romancoke" ></option>
                       <option value="Annapolis" ></option>
@@ -30,13 +32,14 @@ var UserPost = React.createClass({
                   </datalist>
 
                   <br />
-                  <label for="userPost">Start braggin here!</label>
+                  <br />
+                  <label htmlFor="userPost">Start braggin here!</label>
                     <textarea className="form-control" name="userPost" id="userPost" cols="50" rows="5">
                       
                     </textarea>                
                 </div>
                 <div className="form-group">
-                  <label for="upload">Upload Photo</label>
+                  <label htmlFor="upload">Upload Photo</label>
                   <input type="file" name="upload" />
                 </div>
                 <button type="submit" className="btn btn-success">Submit</button>
