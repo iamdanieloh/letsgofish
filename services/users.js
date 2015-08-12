@@ -75,16 +75,16 @@ module.exports = {
     })
   },
 
-  getPost: function(tag, cb) {
+  getPosts: function(tag, cb) {
     dbConnect(function(client, done) {
-      client.query('SELECT * FROM post WHERE tag = $1', [tag], function(err, result) {
+      client.query('SELECT user_post FROM post WHERE tag = $1', [tag], function(err, result) {
         done()
         if (err) {
           console.log(err)
           throw(err)
         }
 
-        cb(result.rows[0])
+        cb(result.rows)
       })
     })
   },

@@ -20,31 +20,31 @@ var Homepage = React.createClass({
 
     return (
       <Layout>
-      <div className="jumbotron">
-      <div className="container">
-      <h1>Lets Go Fish</h1>
-      <div className="panel panel-default">
-      <div className="panel-heading">
-      <h3 className="panel-title">Where are we fishing today?</h3>
-      </div>
-      <div className="panel-body">
+
+
+
+      
+      <div className="inner cover">
+      <h1 className="cover-heading">Where are we fishing today?</h1>
+      <p className="lead">
       {errorMessage}
       <form method="post" action="/location">
-      <div className="form-group">
-      <input className="btn btn-primary" type="submit" value="Matapeake" id="name" name="name"></input>
-      <input className="btn btn-primary" type="submit" value="Romancoke" id="name" name="name"></input>
-      <input className="btn btn-primary" type="submit" value="Annapolis" id="name" name="name"></input>
-      <input className="btn btn-primary" type="submit" value="Fort Smallwood Park" id="name" name="name"></input>
-      <input className="btn btn-primary" type="submit" value="Point Lookout" id="name" name="name"></input>
-      <input className="btn btn-primary" type="submit" value="Sandy Point" id="name" name="name"></input>
-      <input className="btn btn-primary" type="submit" value="Choptank Pier" id="name" name="name"></input>
-
+      <div >
+      <input className="btn btn-primary btn-block" type="submit" value="Matapeake" id="name" name="name"></input>
+      <input className="btn btn-primary btn-block" type="submit" value="Romancoke" id="name" name="name"></input>
+      <input className="btn btn-primary btn-block" type="submit" value="Annapolis" id="name" name="name"></input>
+      <input className="btn btn-primary btn-block" type="submit" value="Fort Smallwood Park" id="name" name="name"></input>
+      <input className="btn btn-primary btn-block" type="submit" value="Point Lookout" id="name" name="name"></input>
+      <input className="btn btn-primary btn-block" type="submit" value="Sandy Point" id="name" name="name"></input>
+      <input className="btn btn-primary btn-block" type="submit" value="Choptank Pier" id="name" name="name"></input>
       </div>
       </form>
+      </p>
       </div>
-      </div>
-      </div>
-      </div>
+
+
+
+
       </Layout>
       );
 }

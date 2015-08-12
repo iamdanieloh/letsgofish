@@ -31,6 +31,7 @@ router.get('/signup', function(req, res) {
   res.render('signup')
 })
 
+
 router.post('/signup', function(req, res) {
   console.log('Looking for email=', req.body.emailAddress)
   users.findByEmailAddress(req.body.emailAddress, function(user) {
@@ -47,9 +48,11 @@ router.post('/signup', function(req, res) {
   })
 })
 
+
 router.get('/login', function(req, res) {
   res.render('login')
 })
+
 
 router.post('/login', function(req, res) {
   users.authenticate(req.body.emailAddress, req.body.password, function(user) {
@@ -60,6 +63,7 @@ router.post('/login', function(req, res) {
     }
   })
 })
+
 
 router.get('/profile', function(req, res) {
   users.profile(req.signedCookies.userId, function(user) {
@@ -72,9 +76,11 @@ router.get('/profile', function(req, res) {
 })
 
 
+
 router.get('/logout', function(req, res) {
   res.clearCookie('userId').redirect('/')
 })
+
 
 router.get('/user_post', function(req, res) {
 	if(req.signedCookies.userId) {
@@ -84,11 +90,12 @@ router.get('/user_post', function(req, res) {
 	}
 })
 
+
 router.post('/user_post', function(req, res) {
 	console.log(req.body);
 	console.log(req.files);
-	console.log(req.files.upload.path)
 
+	if(req.files.upload) {
 	fileName = md5File(req.files.upload.path)+Date.now()+req.files.upload.originalname;
 	console.log(fileName)
       var params = {
@@ -104,6 +111,10 @@ router.post('/user_post', function(req, res) {
 
     var photoLink = 'https://s3.amazonaws.com/'+bucket+'/'+fileName;
 
+} else {
+	var photoLink = '';
+}
+
     users.createPost({userId: req.signedCookies.userId, tag: req.body.tag, userPost: req.body.userPost, upload: photoLink}, function(res) {
     	console.log('post created')
     	
@@ -112,10 +123,6 @@ router.post('/user_post', function(req, res) {
     res.render('user_post', {message: 'Post Created!'})
 
 })
-
-
-
-
 
 
 router.post('/location', function(req, res) {
@@ -140,18 +147,22 @@ router.post('/location', function(req, res) {
 		var loca = loc.toUpperCase();
 		var icon = 'http://www.shermanctweather.org/meteo1/icons/aeris/'+ob.icon;
 		var currentTime = moment().format('llll');
-		var high_t = moment(json.response.responses[2].response[0].periods[3].dateTimeISO).format('h:mm a');
 			console.log(high_t);
+
 
 		if (!json.response.responses[2].response[0].periods[3]) {
 			
 			var high_t = "No Data Available"
 
+		} else {
+
+			var high_t = moment(json.response.responses[2].response[0].periods[3].dateTimeISO).format('h:mm a');
+
 		}
 
-		users.getPost(req.body.name, function(post) {
-			console.log(post)
-			if(!post) {
+		users.getPosts(req.body.name, function(posts) {
+			console.log(posts)
+			if(!posts) {
 				console.log('no post')
 				res.render('location', {
 					time: currentTime, 
@@ -168,7 +179,6 @@ router.post('/location', function(req, res) {
 				})
 			} else {
 				console.log('there is a post')
-				console.log(post.user_post)
 				res.render('location', {
 					time: currentTime, 
 					low_one: low_o, 
@@ -181,7 +191,7 @@ router.post('/location', function(req, res) {
 					temp: ob.tempF, 
 					weather: ob.weather, 
 					icon: icon,
-					post: post.user_post
+					posts: posts
 				})
 			}
 

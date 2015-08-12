@@ -2,17 +2,38 @@ var React = require('react');
 var Layout = require('./layout');
 
 
+var Posts = React.createClass({
+        render: function() {
+          return (
+            <tr className="message">
+                <td className="content">UserName</td>
+                <td className="content">{this.props.user_post}</td>
+                <td className="content">TimeStamp</td>
+            </tr>
+          )
+        }
+      });
+
 var UserPosts = React.createClass({
-  render: function() {
-    return <div>{this.props.post}</div>;
-  }
-});
+    render: function() {
+        var userPosts = this.props.posts.map(function(posts){
+            return <Posts {...posts} />;
+        })
+        return (
+
+            <table className="table messages">
+                <tbody>
+                    {userPosts}
+                </tbody>
+            </table>
+
+         )
+    }
+})
 
 
 var Location = React.createClass({
   render: function() {
-
-
     return (
       <Layout>
         <h1>{this.props.title}</h1>
@@ -31,10 +52,11 @@ var Location = React.createClass({
         Low Tide@  {this.props.low_two}
         <br />
         High Tide@  {this.props.high_two}
+        
         <div className="page-header">
-        <h1><small>Posts for {this.props.body}</small></h1>
-        </div>
-        <p>{this.props.post}</p>
+        <h4>Posts for {this.props.title}</h4>
+        <UserPosts posts={this.props.posts} />
+         </div>
       </Layout>
     );
   }

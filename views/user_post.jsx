@@ -33,6 +33,7 @@ var UserPost = React.createClass({
                 <div className="form-group">
                   <label htmlFor="tag">Select Location:</label>
                   <br />
+                  
                   <input list="tag" name="tag" />
                   <datalist id="tag" require>
                       <option value="Matapeake" ></option>

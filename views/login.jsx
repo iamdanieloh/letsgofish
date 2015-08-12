@@ -26,16 +26,11 @@ var Login = React.createClass({
 
       <form className="form-signin" >
       {errorMessage}
-        <h2 className="form-signin-heading">Please sign in</h2>
+        <h2 className="form-signin-heading">User Login</h2>
         <label for="emailAddress" className="sr-only">Email address</label>
         <input type="email" id="emailAddress" className="form-control" placeholder="Email address" required autofocus />
         <label for="password" className="sr-only">Password</label>
         <input type="password" id="password" className="form-control" placeholder="Password" required />
-        <div className="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me" /> Remember me
-          </label>
-        </div>
         <button className="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       </form>
 
